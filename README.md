@@ -32,3 +32,7 @@ None
 |Metric Name                     |Description                        |
 |:-------------------------------|:----------------------------------|
 | BOUNDARY\_HELLO\_WORLD         | Magnitude of the sampled Sine-Wave|
+
+### References
+
+None
