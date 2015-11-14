@@ -1,9 +1,15 @@
 {
-  "description": "Hello World plugin",
-  "command": "boundary-meter index.lua",
+  "name": "Hello World Lua Plugin
+  "version" : "1.0.0",
+  "meterVersionRequired" : "4.2.0-611",
+  "unsupportedPlatforms" : [ ],
+  "tags" : "lua hello world",
+  "description": "Example plugin in Lua",
   "icon": "icon.png",
+  "command": "boundary-meter init.lua",
+  "postExtract" : "",
   "metrics": [
-    "BOUNDARY_HELLOWORLD"
+    "LUA_HELLO_WORLD"
   ],
   "paramSchema": [
     {

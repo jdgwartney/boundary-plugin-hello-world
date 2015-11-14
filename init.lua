@@ -13,16 +13,18 @@
 -- limitations under the License.
 
 -- Add require statements for built-in libaries we wish to use
+local json = require('json')
 local math = require('math')
 local os = require('os')
 local string = require('string')
+
 local timer = require('timer')
 
 -- Source of our metric
 local SOURCE = 'HelloWorld'
 
 -- How often to output a measurement
-local POLL_INTERVAL = 5
+local POLL_INTERVAL = 5000
 
 -- Define our function that "samples" our measurement value
 function poll()
@@ -34,11 +36,10 @@ function poll()
   local timestamp = os.time()
 
   -- Output our measurement record to standard out
-  print(string.format("%s %s %s %s", "BOUNDARY_HELLO_WORLD", value, SOURCE, timestamp))
+  print(string.format("%s %s %s %s", "LUA_HELLO_WORLD", value, SOURCE, timestamp))
 
 end
 
--- Set the timer interval and call back function poll(). Multiple input configuration
--- pollIterval by 1000 since setIterval expects milliseconds
-timer.setInterval(POLL_INTERVAL * 1000, poll)
+-- Set the timer interval and call back function poll().
+timer.setInterval(POLL_INTERVAL, poll)
 

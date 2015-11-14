@@ -1,10 +1,10 @@
 {
-    "BOUNDARY_HELLO_WORLD": {
+    "LUA_HELLO_WORLD": {
         "defaultAggregate": "avg",
         "defaultResolutionMS": 1000,
-        "description": "Example metric for the Hello World Boundary meter plugin",
+        "description": "Example metric for the Hello World meter plugin in Lua",
         "displayName": "Hello World",
-        "displayNameShort": "Hello World",
+        "displayNameShort": "H W",
         "isDisabled": 0,
         "unit": "number"
     }
