@@ -33,8 +33,6 @@ None
 |:-------------------------------|:----------------------------------|
 | BOUNDARY\_HELLO\_WORLD         | Magnitude of the sampled Sine-Wave|
 
-
 ### References
 
 None
-
