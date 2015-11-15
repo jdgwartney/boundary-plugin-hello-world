@@ -1,3 +1,4 @@
 {
-  "source": "LuaHelloWorld"
+  "source": "LuaHelloWorld",
+  "pollInterval": 5000
 }

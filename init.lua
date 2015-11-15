@@ -13,18 +13,21 @@
 -- limitations under the License.
 
 -- Add require statements for built-in libaries we wish to use
+local fs = require('fs')
 local json = require('json')
 local math = require('math')
 local os = require('os')
 local string = require('string')
-
 local timer = require('timer')
 
--- Source of our metric
-local SOURCE = 'HelloWorld'
+-- Read the param.json file
+local params = json.parse(fs.readFileSync('param.json')) or {}
+
+-- Source of our measurements
+local source = params.source or os.hostname()
 
 -- How often to output a measurement
-local POLL_INTERVAL = 5000
+local pollInterval = params.pollInterval or 5000
 
 -- Define our function that "samples" our measurement value
 function poll()
@@ -36,10 +39,10 @@ function poll()
   local timestamp = os.time()
 
   -- Output our measurement record to standard out
-  print(string.format("%s %s %s %s", "LUA_HELLO_WORLD", value, SOURCE, timestamp))
+  print(string.format("%s %s %s %s", "LUA_HELLO_WORLD", value, source, timestamp))
 
 end
 
 -- Set the timer interval and call back function poll().
-timer.setInterval(POLL_INTERVAL, poll)
+timer.setInterval(pollInterval, poll)
 
